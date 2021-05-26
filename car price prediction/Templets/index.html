@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Old Car Price Prediction</title>
+</head>
+
+<body>
+
+  <div class="d-flex justify-content-center align-items-center container pt-5">
+
+    <div class="row ">
+
+
+      <form action="{{ url_for('predict')}}" method="post">
+        <h2>Car Price Prediction Base On Features</h2>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Year of buy </label>
+          <input name="Year" type="number" class="form-control" id="first" aria-describedby="emailHelp"
+            placeholder="Enter Year(eg. 2010,2015....)">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">What is the Showroom Price?(In lakhs)</label>
+          <input required="required" name="Present_Price" type="number" class="form-control" id="second"
+            aria-describedby="emailHelp" placeholder="Enter Showroom Price Here">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">How Many Kilometers Drived?</label>
+          <input name="Kms_Driven" required="required" name="Year" type="number" class="form-control" id="third"
+            aria-describedby="emailHelp" placeholder="Enter ">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">How much owners previously had the car(0 or 1 or 3) ?</label>
+          <input required="required" name="Owner" type="number" class="form-control" id="fourth"
+            aria-describedby="emailHelp" placeholder="Enter Here">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">What Is the Fuel type?</label>
+          <select required="required" name="Fuel_Type_Petrol" class="form-control" id="fuel" class="custom-select"
+            id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="CNG">CNG</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Are you A Dealer or Individual?</label>
+          <select name="Seller_Type_Individual" id="resea" class="custom-select" required="required">
+            <option selected>Choose...</option>
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Transmission type</label>
+          <select name="Transmission_Mannual" class="custom-select" id="research" required="required">
+            <option selected>Choose...</option>
+            <option value="Mannual">Manual Car</option>
+            <option value="Automatic">Automatic Car</option>
+          </select>
+        </div>
+
+
+        <div class="form-group text-center">
+          <button id="sub" class="btn btn-primary" type="submit ">Calculate the Selling Price</button>
+
+        </div>
+
+
+        <div style="text-align: center; ">
+          <h3  >{{ prediction_text }}<h3>
+
+        </div>
+      
+
+
+
+
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
