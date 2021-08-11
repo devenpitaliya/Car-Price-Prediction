@@ -1,7 +1,8 @@
 
 Data Science Project
 # Car-Price-Prediction
-# Car-Price-Predictionn is a intermediate level ML Project that predict price of a car using differeb=nt parameters.
+Car-Price-Predictionn is a intermediate level ML Project that predict price of a car using different parameters.
+its a regression problem.
 
 
 ## Installation
